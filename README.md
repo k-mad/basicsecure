@@ -37,7 +37,7 @@ var myHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 func main() {
     bs := basicsecure.BasicSecure{
         AllowedHosts: []string{"example.com", "www.example.com"},
-        Testing:      true,
+        Testing:      inTesting(),
     }
     http.ListenAndServe("127.0.0.1:8080", bs.Handler(myHandler))
 }
